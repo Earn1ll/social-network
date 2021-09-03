@@ -2,12 +2,19 @@ import s from './profile.module.css';
 import MyPosts from "./MyPosts/MyPosts";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
-const Profile = () => {
-    return (<div>
+const Profile = (props) => {
+
+
+
+    return (
+        <div>
             <ProfileInfo/>
-            <MyPosts/>
+            <MyPosts
+                posts={props.state.posts}
+                addPost={props.addPost}
+            />
         </div>
 
-    );
+    )
 }
 export default Profile;
