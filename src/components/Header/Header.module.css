@@ -1,7 +1,15 @@
 .header {
+    display: flex;
     grid-area: header;
-    background-color: #222835;
+    background: linear-gradient(270deg,#3e3eee, #dd9a9a);
+
+    transition: background .2s linear;
+
+}
+.header:hover {
+    background: linear-gradient(270deg,#dd9a9a,#3e3eee );
 }
 .logo {
+
     width: 20px;
 }
