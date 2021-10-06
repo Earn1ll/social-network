@@ -1,3 +1,8 @@
+import profileReducer from "./profileReducer";
+import dialogsReducer from "./dialogsReducer";
+import {sidebarReducer} from "./sidebarReducer";
+
+
 
 let store = {
     _state: {
@@ -26,41 +31,30 @@ let store = {
                 {id: 5, message: 'Yo!'},
                 {id: 6, message: 'Great!'}
             ],
+            newMessageBody: ""
         },
+        sidebar: {}
     },
     _collSubscriber() {
         console.log('da');
     },
-    getState(){
+    getState() {
         return this._state
     },
-    subscribe(observer){
+    subscribe(observer) {
         this._collSubscriber = observer;
     },
-    _addPost() {
-        let newPost = {
-            id: 4,
-            message: this._state.profilePage.newPostText,
-            likes: 0,
-        }
-        this._state.profilePage.posts.push(newPost);
-        this._state.profilePage.newPostText = '';
-        this._collSubscriber(this._state);
-    },
-    _updateNewPostText(newText) {
-        this._state.profilePage.newPostText = newText;
+    dispatch(action) { //{TYPE:'ADD-POST'}
+
+        this._state.profilePage =  profileReducer(this._state.profilePage,action);
+        this._state.dialogsPage =  dialogsReducer(this._state.dialogsPage,action);
+        this._state.sidebar =  sidebarReducer(this._state.sidebar,action);
         this._collSubscriber(this._state);
 
-    },
-    dispatch(action){ //{TYPE:'ADD-POST'}
-        if (action.type === 'ADD-POST') {
-            this._addPost();
-        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
-            this._updateNewPostText(action.newText);
-        }
     }
 }
 
 
+
 export default store;
-window.store =store;
+window.store = store;
