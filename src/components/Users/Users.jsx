@@ -8,6 +8,7 @@ let Users = (props) => {
             id: 1,
             followed: true,
             photoUrl:'https://cdn.iconscout.com/icon/free/png-256/laptop-user-1-1179329.png',
+            fullName: 'Oleg',
             status: 'I am a superFrontendDeveloper! :))',
             location: {city: 'Brest', country: 'Belarus'}
         },
