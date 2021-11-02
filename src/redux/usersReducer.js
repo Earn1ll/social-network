@@ -4,7 +4,7 @@ const Set_Users = 'Set_Users';
 
 let initialState = {
     users: [
-        {
+       /* {
             id: 1,
             followed: true,
             photoUrl:'https://cdn.iconscout.com/icon/free/png-256/laptop-user-1-1179329.png',
@@ -28,7 +28,7 @@ let initialState = {
             location: {city: 'Minsk', country: 'Belarus'}
         },
 
-    ]
+   */ ]
 
 }
 
