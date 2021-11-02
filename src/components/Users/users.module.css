@@ -1,9 +1,16 @@
+.pages {
+    cursor: pointer;
+}
+
+
 .userPhoto {
     width: 100px;
     height: 100px;
-<<<<<<< HEAD
-    border-radius: 50%;
-=======
->>>>>>> 1802cba (add UsersPage (bll and ui))
 
+    border-radius: 50%;
+}
+
+.selectedPage {
+    font-weight: bold;
+    cursor: pointer;
 }

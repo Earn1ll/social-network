@@ -1,43 +1,14 @@
 const Follow = 'Follow';
 const Unfollow = 'Unfollow';
 const Set_Users = 'Set_Users';
+const Set_Current_Page = 'Set_Current_Page';
+const Set_Total_Users_Count = 'Set_Total_Users_Count';
 
 let initialState = {
-    users: [
-<<<<<<< HEAD
-       /* {
-=======
-        {
->>>>>>> 1802cba (add UsersPage (bll and ui))
-            id: 1,
-            followed: true,
-            photoUrl:'https://cdn.iconscout.com/icon/free/png-256/laptop-user-1-1179329.png',
-            status: 'I am a superFrontendDeveloper! :))',
-            location: {city: 'Brest', country: 'Belarus'}
-        },
-        {
-            id: 2,
-            followed: false,
-            photoUrl:'https://cdn.iconscout.com/icon/free/png-256/laptop-user-1-1179329.png',
-            fullName: 'Vasiliy',
-            status: 'Working hard!',
-            location: {city: 'Cheboksary', country: 'Russia'}
-        },
-        {
-            id: 3,
-            followed: true,
-            photoUrl:'https://cdn.iconscout.com/icon/free/png-256/laptop-user-1-1179329.png',
-            fullName: 'Alexey',
-            status: 'Hello people!',
-            location: {city: 'Minsk', country: 'Belarus'}
-        },
-
-<<<<<<< HEAD
-   */ ]
-=======
-    ]
->>>>>>> 1802cba (add UsersPage (bll and ui))
-
+    users: [],
+    pageSize: 5,
+    totalUsersCount: 0,
+    currentPage: 1,
 }
 
 const usersReducer = (state = initialState, action) => {
@@ -67,7 +38,17 @@ const usersReducer = (state = initialState, action) => {
         case Set_Users: {
             return {
                 ...state,
-                users: [...state.users, ...action.users]
+                users: action.users
+            }
+        }
+        case Set_Current_Page: {
+            return {
+                ...state, currentPage: action.currentPage
+            }
+        }
+        case Set_Total_Users_Count: {
+            return {
+                ...state, totalUsersCount: action.count
             }
         }
         default:
@@ -91,6 +72,18 @@ export const setUsersAC = (users) => {
     return {
         type: Set_Users,
         users
+    }
+}
+export const setCurrentPageAC = (currentPage) => {
+    return {
+        type: Set_Current_Page,
+        currentPage
+    }
+}
+export const setUsersTotalCountAC = (totalUsersCount) => {
+    return {
+        type: Set_Total_Users_Count,
+        count: totalUsersCount
     }
 }
 
