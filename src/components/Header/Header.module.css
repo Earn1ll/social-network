@@ -3,13 +3,26 @@
     grid-area: header;
     background: linear-gradient(270deg,#3e3eee, #dd9a9a);
 
-    transition: background .2s linear;
+    transition:all background .2s linear;
 
 }
 .header:hover {
     background: linear-gradient(270deg,#dd9a9a,#3e3eee );
 }
 .logo {
-
-    width: 20px;
+margin-right: auto;
+    margin-left: auto;
+    width: 50px;
+}
+.loginBlock {
+    float: right;
+    margin-right: 20px;
+}
+.link {
+color: #deebf8;
+    text-decoration: none;
+    transition: all .2s ease-out;
+}
+.link:hover {
+   color: black;
 }
