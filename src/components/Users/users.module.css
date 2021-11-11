@@ -14,3 +14,19 @@
     font-weight: bold;
     cursor: pointer;
 }
+
+.button {
+    font-style: italic;
+    font-weight: bold;
+    cursor: pointer;
+    background: #c6c4c4;
+    border: 1px solid #3e3eee;
+    border-radius: 10px;
+    padding: 5px 7px;
+    margin: 10px 0px 010px 20px;
+    transition: all .2s ease-in-out;
+}
+.button:hover {
+    border: 1px solid #4c4cf3;
+    background: #e9e8e8;
+}
