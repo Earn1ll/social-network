@@ -1,8 +1,9 @@
 
-.img {
-    width: 100%;
-    height: 600px;
-}
-.discription {
+.descriptionBlock {
     padding: 10px;
+
+
+}
+.avatar {
+    margin: 0 auto;
 }
