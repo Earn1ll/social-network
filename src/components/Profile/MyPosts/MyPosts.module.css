@@ -4,3 +4,22 @@
 .posts {
     margin-top: 10px;
 }
+h3 {
+    font-size:30px ;
+}
+textarea {
+    border: 2px solid gray;
+    border-radius: 10px;
+    background: #eeeded;
+}
+button {
+    border:solid 4px #b1b1bf;
+    min-height: 25px;
+    min-width: 170px;
+    border-radius: 6px;
+    background: linear-gradient(90deg, rgba(238,236,228,1) 0%, rgba(217,217,254,1) 35%, rgba(201,242,250,1) 100%);
+    transition: border .5s ease-in-out;
+}
+button:hover{
+    border:outset 4px #b1b1bf;
+}
