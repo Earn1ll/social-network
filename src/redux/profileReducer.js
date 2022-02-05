@@ -1,7 +1,6 @@
 import {profileAPI, usersAPI} from "../api/api";
 
 const Add_Post = 'ADD-POST';
-const Update_New_Post_Text = 'UPDATE-NEW-POST-TEXT';
 const Set_User_Profile = 'Set_User_Profile';
 const Set_Status = 'Set_Status';
 
@@ -11,7 +10,6 @@ let initialState = {
         {id: 2, message: 'It\'s my first post', likes: 24},
         {id: 3, message: 'Nice to meet you!', likes: 32},
     ],
-    newPostText: 'it-samurai',
     profile: null,
     stasus: ""
 }
@@ -21,19 +19,13 @@ const profileReducer = (state = initialState, action) => {
         case Add_Post: {
             let newPost = {
                 id: 4,
-                message: state.newPostText,
+                message: action.newPostText,
                 likes: 0,
             };
             return  {
                 ...state,
                 posts: [...state.posts,newPost],
                 newPostText: ''
-            };
-        }
-        case Update_New_Post_Text: {
-            return  {
-                ...state,
-                newPostText: action.newText
             };
         }
         case Set_User_Profile: {
@@ -53,14 +45,12 @@ const profileReducer = (state = initialState, action) => {
     }
 }
 
-export const addPostActionCreator = () => {
+export const addPostActionCreator = (newPostText) => {
     return {
-        type: Add_Post
+        type: Add_Post,newPostText
     }
 }
-export const updateNewPostTextActionCreator = (text) => {
-    return {type: Update_New_Post_Text, newText: text}
-}
+
 export const setStatus = (status) => ({type: Set_Status, status})
 
 export const setUserProfile = (profile) => {
