@@ -8,3 +8,8 @@
 .formControl.error span {
     color: red;
 }
+.SumError {
+    border: red 1px solid;
+    padding: 5px;
+    color: crimson;
+}
